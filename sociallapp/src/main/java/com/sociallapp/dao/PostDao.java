@@ -10,4 +10,5 @@ public interface PostDao {
     Integer delete(Integer id);
     List<Post> getAll();
     Post getById(Integer id);
+    Post getByContent(String content);
 }
