@@ -7,7 +7,7 @@ public class Post {
     private Integer id;
     private String content;
     private String date;
-    private String author;
+    private User author;
 
     public Integer getId() {
         return id;
@@ -33,11 +33,11 @@ public class Post {
         this.date = date;
     }
 
-    public String getAuthor() {
+    public User getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(User author) {
         this.author = author;
     }
 

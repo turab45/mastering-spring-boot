@@ -20,14 +20,14 @@ public class PostDaoImpl implements PostDao {
     @Override
     public Post addOrUpdate(Post post) {
         if (post.getId() == null){
-            query = "INSERT INTO post(post_content,post_date,post_author) VALUES(?,?,?)";
-            this.jdbcTemplate.update(query, post.getContent(), post.getDate(), post.getAuthor());
+            query = "INSERT INTO post(post_content,post_date,author_id) VALUES(?,?,?)";
+            this.jdbcTemplate.update(query, post.getContent(), post.getDate(), post.getAuthor().getId());
 
             return this.getByContent(post.getContent());
         }
 
-        query = "UPDATE post SET post_content=?, post_date=?, post_author=? WHERE id=?";
-        int id = this.jdbcTemplate.update(query, post.getContent(), post.getDate(), post.getAuthor(), post.getId());
+        query = "UPDATE post SET post_content=?, post_date=?, author_id=? WHERE id=?";
+        int id = this.jdbcTemplate.update(query, post.getContent(), post.getDate(), post.getAuthor().getId(), post.getId());
         return this.getByContent(post.getContent());
     }
 
