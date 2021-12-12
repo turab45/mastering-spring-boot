@@ -20,6 +20,7 @@ public class User {
     @Size(min = 5, max = 15, message = "Password must be in 5-15 range.")
     private String password;
 
+    pri
     private Timestamp createdAt;
 
 
