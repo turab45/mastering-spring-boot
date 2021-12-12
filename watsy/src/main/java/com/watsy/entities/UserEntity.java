@@ -1,6 +1,7 @@
 package com.watsy.entities;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,7 +17,7 @@ public class UserEntity {
     private String password;
 
     @OneToMany(mappedBy = "user")
-    private Set<PostEntity> posts;
+    private List<PostEntity> posts;
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
@@ -58,11 +59,11 @@ public class UserEntity {
         this.password = password;
     }
 
-    public Set<PostEntity> getPosts() {
+    public List<PostEntity> getPosts() {
         return posts;
     }
 
-    public void setPosts(Set<PostEntity> posts) {
+    public void setPosts(List<PostEntity> posts) {
         this.posts = posts;
     }
 

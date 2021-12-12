@@ -14,10 +14,10 @@ public class GroupDaoImpl implements GroupDao {
     @Autowired
     private GroupRepository groupRepository;
 
-    
+
     @Override
     public GroupEntity addOrUpdateGroup(GroupEntity groupEntity) {
-        return null;
+        return this.groupRepository.save(groupEntity);
     }
 
     @Override

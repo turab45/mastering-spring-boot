@@ -6,6 +6,7 @@ import com.watsy.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -17,7 +18,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public UserEntity addOrUpdateUser(UserEntity userEntity) {
-        return null;
+        return this.userRepository.save(userEntity);
     }
 
     @Override
@@ -36,7 +37,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public Set<UserEntity> getAllUsers() {
-        return null;
+    public List<UserEntity> getAllUsers() {
+        return (List) this.userRepository.findAll();
     }
 }

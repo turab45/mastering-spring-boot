@@ -2,6 +2,7 @@ package com.watsy.dao;
 
 import com.watsy.entities.UserEntity;
 
+import java.util.List;
 import java.util.Set;
 
 public interface UserDao {
@@ -9,6 +10,6 @@ public interface UserDao {
     Integer deleteUser(Integer id);
     UserEntity getUserById(Integer id);
     UserEntity getUserByName(String name);
-    Set<UserEntity> getAllUsers();
+    List<UserEntity> getAllUsers();
 
 }
