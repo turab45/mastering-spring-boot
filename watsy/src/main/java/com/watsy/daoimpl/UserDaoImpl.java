@@ -2,10 +2,19 @@ package com.watsy.daoimpl;
 
 import com.watsy.dao.UserDao;
 import com.watsy.entities.UserEntity;
+import com.watsy.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class UserDaoImpl implements UserDao {
+
+    @Autowired
+    private UserRepository userRepository;
+
+
     @Override
     public UserEntity addOrUpdateUser(UserEntity userEntity) {
         return null;
